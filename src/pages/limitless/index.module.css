@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.demoPage {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh; /* Ensures full screen height */
+  width: 100vw; /* Ensures full screen width */
+  overflow: hidden; /* Prevents unwanted scrollbars */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.demoPage h1, .demoPage p, .demoPage a {
+  font-weight: 700;
+}
+
+.demoPage a {
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.demoPage a:hover {
+  color: #005bb5;
+}

@@ -1,0 +1,284 @@
+/* General Layout */
+.pricingTableContainer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.pricingTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.pricingTitle span {
+  text-decoration: none;
+  color: var(--highlight-color, #4CAF50); /* Dynamic highlight color */
+}
+  
+/* Toggle Section */
+.filterToggleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.toggleOption {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  /* font-weight: bold; */
+}
+
+.toggleOption:hover {
+  background: #8C52FF;
+  color: #ffffff;
+}
+
+.activeToggle {
+  background: var(--highlight-color, #4CAF50); /* Dynamic highlight color */
+  color: white;
+}
+
+  
+  .toggleContainer {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #4CAF50;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0; /* Remove extra padding */
+    cursor: pointer;
+    overflow: hidden; /* Prevent bullet from falling outside */
+  }
+  
+  .toggleContainer.yearly .toggleBullet {
+    transform: translateX(24px); /* Ensure bullet stays inside on right side */
+  }
+  
+  .toggleBullet {
+    position: absolute;
+    width: 22px; /* Slightly smaller than container height */
+    height: 22px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateX(2px); /* Default position (left-aligned) */
+    transition: transform 0.3s ease;
+    z-index: 1;
+  }
+  
+  
+  .saveBadge {
+    font-size: 1rem; /* Slightly larger for better visibility */
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 1rem; /* Add spacing from the toggle */
+    margin-bottom: 2rem; /* Add spacing before the plans */
+    display: inline-block;
+    text-align: center;
+  }
+  
+  
+/* Plans Section */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.planCard {
+  max-width: 450px;
+  margin: 0 auto;
+  background: #ffffff; /* Bright white background */
+  border: 1px solid #e5e7eb; /* Light border for subtle separation */
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures button is at the bottom */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.planCard:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.planCard.highlightedOutline {
+  border: 2px solid #4CAF50; /* Highlighted outline */
+}
+
+/* Abstract Line Background (Removed if not needed) */
+/* .planCard.highlightedOutline {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 87, 34, 0.05),
+    rgba(255, 255, 255, 0.05)
+  );
+} */
+
+  
+  .planHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .planIcon {
+    font-size: 2.5rem;
+    color: #4CAF50;
+  }
+  
+  .planName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+
+.planPrice {
+    font-size: 2.5rem; /* Increased for emphasis */
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .planPrice span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #666;
+  }
+
+  .priceUnit {
+    font-size: 1rem; /* Matches body text size */
+    font-weight: normal;
+    color: #666;
+  }
+
+  /* Dòng chữ phụ quy đổi giá tiền usd sang vnd */
+  .planDescription {
+    font-size: 0.875rem; /* Slightly smaller than the body text */
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  /* Abstract Line Background for Selected Plan */
+/* .planCard.highlightedOutline {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 87, 34, 0.05),
+        rgba(255, 87, 34, 0.02)
+      ),
+      url("/img/abstract-lines.svg") no-repeat right bottom;
+    background-size: 150px auto;
+    border: 2px solid #4CAF50;
+  } */
+  
+  
+/* Features Section */
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+  
+.checkIcon {
+  color: #4caf50;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+  
+.getStartedBtn {
+  background: var(--button-color, #4CAF50); /* Dynamic button color */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 140px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.getStartedBtn:hover {
+  background-color: transparent; /* Switch to outline */
+  color: var(--button-color, #4CAF50); /* Match the outline color */
+  border: 2px solid var(--button-color, #4CAF50); /* Outline border */
+  transform: scale(1.1); /* Add zoom effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Outline Button */
+.outlineButton {
+  background-color: transparent;
+  color: inherit; /* Inherit the text color set dynamically */
+  border: 2px solid currentColor; /* Border color matches the current text color */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.outlineButton:hover {
+  background-color: currentColor; /* Fill the background with current color */
+  color: #ffffff; /* Change text color to white */
+  transform: scale(1.1); /* Add zoom effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Highlighted Button */
+.filledButton {
+  background-color: var(--button-color, #4CAF50);
+  color: #ffffff;
+  border: 2px solid var(--button-color, #4CAF50); /* Border matches the fill color */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.filledButton:hover {
+  background-color: transparent; /* Switch to outline */
+  color: var(--button-color, #4CAF50); /* Match the outline color */
+  border: 2px solid var(--button-color, #4CAF50); /* Outline border */
+  transform: scale(1.1); /* Add zoom effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+:root {
+  --button-color: #4CAF50; /* Default button color */
+  --highlight-color: #8C52FF; /* Default highlight color */
+}
+
+[data-theme="dark"] {
+  --button-color: #4CAF50; /* Dark mode button color */
+  --highlight-color: #8C52FF; /* Dark mode highlight color */
+}

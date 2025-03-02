@@ -1,0 +1,371 @@
+/* General Container */
+.pricingComparison {
+  margin: 2rem auto;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  color: #222;
+}
+
+.description {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+  
+/* Table Layout */
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+}
+
+/* Table Wrapper for Sticky Header */
+.tableWrapper {
+  overflow-y: auto;
+  /* hide the scroll bar */
+  /* scrollbar-width: none; */
+  max-height: 70vh; /* Restrict height to make the header sticky */
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr); /* Adjust to the number of plans */
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.row:hover {
+  background-color: #f9f9f9;
+}
+
+/* Sticky Header Row */
+.headerRow {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #ddd;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr); /* Adjust column distribution for plans */
+  padding: 1rem 0;
+}
+
+/* Plan Titles and Buttons Alignment */
+.headerRow .planTitle {
+  margin: 0; /* Reset margin for better alignment */
+}
+
+.headerRow .ctaButton {
+  margin-top: 0.5rem; /* Adjust spacing for buttons */
+}
+
+/* CTA Button in Header */
+.ctaButton {
+  margin-top: 1rem;
+  align-self: center; /* Center the button in the card */
+  background: var(--button-color, #4CAF50); /* Dynamic button color */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 120px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.ctaButton:hover {
+  background-color: transparent;
+  color: var(--button-color, #4caf50);
+  /* border: 2px solid var(--button-color, #4caf50); */
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filled Button (Highlighted Plan) */
+.ctaButton.highlightedButton {
+  background: var(--highlight-color, #007bff);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 120px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ctaButton.highlightedButton:hover {
+  background-color: transparent;
+  color: var(--highlight-color, #007bff);
+  border: 2px solid var(--highlight-color, #007bff);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Outline Button (Non-Highlighted Plans) */
+.ctaButton.outlineButton {
+  background: transparent;
+  border: 2px solid var(--highlight-color, #007bff);
+  color: var(--highlight-color, #007bff);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 120px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ctaButton.outlineButton:hover {
+  background-color: #ffffff;
+  color: #fff;
+  border-color: var(--highlight-color, #007bff);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+  
+  /* Feature Column */
+  .featureColumn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  .featureName {
+    margin-left: 0.5rem;
+    /* font-weight: bold; */
+    color: inherit; /* Inherit text color from inline style */
+  }
+  
+  /* Tooltip */
+  .tooltipContainer {
+    margin-left: 0.3rem;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .infoIcon {
+    font-size: 1rem;
+    color: #ccc; /* Light gray for inactive state */
+    margin-left: 0.2rem;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+  
+  .tooltipContainer:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+/* Align Header Content */
+.planColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  
+/* Plan Title in Header */
+.planTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0.5rem; /* Add spacing below the title */
+}
+
+.planColumn.highlighted {
+  /* background-color: var(--plan-color, #007bff); */
+  color: #8C52FF;
+}
+
+.planTitle.highlightedTitle {
+  color: var(--highlight-color, #007bff);
+}
+  
+  /* Checkmark and Cross */
+  .check i {
+    color: #4caf50; /* Green for checkmark */
+    font-size: 1.2rem;
+  }
+  
+  .cross i {
+    color: #f44336; /* Red for cross */
+    font-size: 1.2rem;
+  }
+  
+  /* Group Header (Desktop) */
+  .rowGroupHeader {
+    font-weight: bold;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #ddd; /* Line instead of background fill */
+  }
+  
+  .groupName {
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  /* Mobile View Group Header */
+  .mobileGroupHeader {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+    margin: 1rem 0 0.5rem 0;
+    text-align: left;
+    border-bottom: 2px solid #ddd; /* Line below the group name */
+  }
+  
+/* Mobile View */
+.planScrollContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem; /* Space between cards */
+    padding: 1rem;
+    scroll-padding-left: 5%; /* Ensures the first card is fully visible */
+    scroll-padding-right: 5%; /* Ensures the last card is fully visible */
+  }
+  
+  .mobilePlan {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space between title/features and button */
+  }
+  
+  .mobilePlanTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .mobileFeatureRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .mobileFeatureRow:last-child {
+    border-bottom: none;
+  }
+  
+  .mobilePlanColumn {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  /* Adjusting Horizontal Scrollbar Styling */
+  .planScrollContainer::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .planScrollContainer::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  .planScrollContainer::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .row {
+      display: none; /* Hide desktop rows */
+    }
+  
+    .rowGroupHeader {
+      display: none; /* Hide desktop group headers */
+    }
+  
+    .mobileView {
+      display: block; /* Show mobile view */
+    }
+  
+    .planScrollContainer {
+      flex-wrap: nowrap;
+      scroll-padding-left: 5%; /* Ensure the first card is visible */
+      scroll-padding-right: 5%; /* Ensure the last card is visible */
+      padding: 1rem;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .row {
+      display: grid; /* Show desktop rows */
+    }
+  
+    .mobileView {
+      display: none; /* Hide mobile view */
+    }
+  
+    .planScrollContainer {
+      display: none; /* Disable horizontal scroll container */
+    }
+  }
+  

@@ -1,0 +1,17 @@
+.blogPageLayout {
+  display: flex;
+  gap: 1rem;
+}
+
+.tocContainer {
+  flex: 0 0 250px;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+  background: var(--ifm-background-color);
+  padding: 1rem;
+  border-right: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.contentContainer {
+  flex: 1;
+}
