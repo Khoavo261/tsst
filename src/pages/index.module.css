@@ -66,12 +66,25 @@
   color: #000;
 }
 
-/* Icon */
-.icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  color: #666;
+/* Icon box: khung vuông bo góc */
+.iconBox {
+  width: 40px;               /* chiều rộng khung */
+  height: 40px;              /* chiều cao khung (bằng nhau để thành vuông) */
+  border: 1px solid #ccc;    /* đường viền mỏng */
+  border-radius: 8px;        /* bo góc */
+  display: flex;             /* để canh giữa icon */
+  align-items: center;
+  justify-content: center;
+  background-color: #c19b9b; /* nền xám nhạt */
 }
+
+.iconImg {
+  width: 40px;       /* Hoặc tuỳ ý */
+  height: 40px;      /* Giữ tỉ lệ vuông, có thể đổi */
+  object-fit: cover; /* hoặc contain tuỳ kiểu ảnh */
+  margin-right: 1rem; /* nếu muốn chừa khoảng cách với text */
+}
+
 
 .cardContent {
   flex: 1;

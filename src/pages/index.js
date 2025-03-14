@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
-import { FaGlobe } from 'react-icons/fa';
+// Xoá dòng import FaGlobe, vì không còn dùng react-icons
+// import { FaGlobe } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <header className={styles.hero}>
         <h1>Hi, I'm Khoa Vo.</h1>
         <p className={styles.intro}>
-          I love sharing knowledge and building useful projects.
+          Bringing Vietnam to the world.
         </p>
         <div className={styles.social}>
           <a
@@ -29,7 +30,12 @@ export default function Home() {
       {/* Main content: 1 card (Deutsch.vn) */}
       <main className={styles.main}>
         <div className={styles.card}>
-          <FaGlobe className={styles.icon} />
+          {/* Thay FaGlobe bằng ảnh */}
+          <img
+            src="/img/avt.png"  // Đường dẫn đến ảnh trong thư mục static/img
+            alt="Deutsch Icon"
+            className={styles.iconImg}
+          />
           <div className={styles.cardContent}>
             <h3>Deutsch.vn</h3>
             <p>My project to help you learn German effectively.</p>
