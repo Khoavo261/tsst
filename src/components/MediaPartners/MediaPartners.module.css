@@ -1,0 +1,86 @@
+/* ======= Phần tổng thể ======= */
+.mediaSection {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  /* Tiêu đề chính */
+  .mediaTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Phụ đề nhỏ */
+  .mediaSubtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Container chứa danh sách đối tác */
+  .partnersContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  
+  /* Thẻ đối tác */
+  .partnerCard {
+    width: 450px;
+    height: 150px;
+    background: #f2e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .partnerCard:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Logo đối tác */
+  .partnerLogo {
+    max-width: 80%;
+    max-height: 60px;
+    object-fit: contain;
+  }
+  
+  /* Container form đăng ký email */
+  .subscribeContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Ô nhập email */
+  .emailInput {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Nút đăng ký */
+  .subscribeButton {
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .subscribeButton:hover {
+    background: #333;
+  }
+  

@@ -1,43 +1,54 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            5 Phút làm quen với Docusaurus ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import { FaGlobe } from 'react-icons/fa';
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Chào mừng bạn đến với ${siteConfig.title}`}
-      description="Mô tả website được đặt bên dưới thẻ <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title="Khoa Vo"
+      description="Personal page of Khoa Vo"
+    >
+      {/* Hero Section */}
+      <header className={styles.hero}>
+        <h1>Hi, I'm Khoa Vo.</h1>
+        <p className={styles.intro}>
+          I love sharing knowledge and building useful projects.
+        </p>
+        <div className={styles.social}>
+          <a
+            href="https://www.instagram.com/khoa.notes/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @khoa.notes
+          </a>
+        </div>
+      </header>
+
+      {/* Main content: 1 card (Deutsch.vn) */}
+      <main className={styles.main}>
+        <div className={styles.card}>
+          <FaGlobe className={styles.icon} />
+          <div className={styles.cardContent}>
+            <h3>Deutsch.vn</h3>
+            <p>My project to help you learn German effectively.</p>
+          </div>
+          <a
+            className={styles.button}
+            href="https://deutsch.vn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit
+          </a>
+        </div>
       </main>
+
+      {/* Footer tuỳ chỉnh */}
+      <footer className={styles.footer}>
+        © 2025 Khoa Vo
+      </footer>
     </Layout>
   );
 }

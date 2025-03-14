@@ -1,140 +1,107 @@
-/* Light Mode Variables */
-:root {
-    --background: #ffffff;
-    --text: #333333;
-    --section-background: #f9f9f9;
-    --button-text: #008080;
-    --button-border: #008080;
-    --image-shadow-normal: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for normal state */
-    --image-shadow-hover: 0px 12px 30px rgba(0, 0, 0, 0.3); /* Darker shadow for hover in light mode */
+/* ======= Căn chỉnh trang chính ======= */
+/* ======= Căn chỉnh trang chính ======= */
+.pageContainer {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center; /* Căn giữa toàn bộ nội dung */
 }
 
-/* Dark Mode Variables */
-[data-theme='dark'] {
-    --background: #1e1e1e;
-    --text: #e0e0e0;
-    --section-background: #2c2c2c;
-    --button-text: #e0e0e0;
-    --button-border: #e0e0e0;
-    --image-shadow-normal: 0px 4px 10px rgba(0, 128, 128, 0.2); /* Subtle teal shadow for normal state */
-    --image-shadow-hover: 0px 12px 30px rgba(0, 128, 128, 0.4); /* More prominent teal shadow on hover in dark mode */
+/* ======= Phần Đội Ngũ Sáng Lập ======= */
+.founderSection {
+  margin-top: 50px; /* Cách xa phần trên để dễ đọc */
+  padding-top: 30px;
+  border-top: 1px solid #ddd; /* Đường kẻ nhẹ để phân tách */
 }
 
-.twoColumnSection {
-    padding: 2rem;
-    margin: 0 10%;
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-    /* background-color: var(--section-background); */
+.founderTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.twoColumnSection.visible {
-    opacity: 1;
-    transform: translateY(0);
+.readMore {
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-.twoColumnSection:not(.visible) {
-    opacity: 0;
-    transform: translateY(30px);
+.readMore a {
+  color: #f39c12; /* Màu nổi bật */
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Apply colors using CSS variables */
-.sectionTitle {
-    width: 100%;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: var(--text);
+.readMore a:hover {
+  text-decoration: underline;
 }
-
-.columnContainer {
+  
+  /* ======= Tổng thể section ======= */
+  .section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 80px;
+  }
+  
+  /* ======= Container 2 cột ======= */
+  .container {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.textArea h2 {
-    color: var(--text);
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.textArea p {
-    color: var(--text);
-}
-
-.textArea {
-    padding: 1rem;
-}
-
-.textAreaLeft {
-    padding-left: 2rem;
-}
-
-.textAreaRight {
-    padding-right: 2rem;
-}
-
-.imageArea {
+    gap: 15px; /* Giảm khoảng cách giữa ảnh và nội dung */
+  }
+  
+  /* Hình ảnh bên trái */
+  .imageWrapper {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.image {
-    width: 100%;
+    justify-content: center; /* Căn giữa ảnh */
+  }
+  
+  .image {
+    max-width: 90%; /* Giữ ảnh nhỏ hơn để cân đối */
     height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: var(--image-shadow-normal); /* Subtle shadow by default */
-}
-
-.image:hover {
-    transform: scale(1.05);
-    box-shadow: var(--image-shadow-hover); /* Prominent shadow on hover */
-}
-
-.button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    max-height: 400px; /* Đặt chiều cao tối đa */
+    object-fit: contain;
+  }
+  
+  /* Văn bản bên phải */
+  .text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Tiêu đề phụ */
+  .heading {
+    font-size: 20px;
     font-weight: bold;
-    text-decoration: none;
-    border: 1px solid;
-    border-radius: 4px;
-    color: var(--button-text);
-    border-color: var(--button-border);
-    background-color: transparent;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.button:hover {
-    background-color: #bf6363;
-    color: #ffffff;
-    border-color: #bf6363;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .twoColumnSection {
-        margin: 0 5%;
+    margin-bottom: 18px; /* Giảm khoảng cách giữa tiêu đề và nội dung */
+  }
+  
+  /* Nội dung mô tả */
+  .description {
+    font-size: 16px;
+    font-weight: Regular;
+    color: #444;
+    line-height: 1.5; /* Giảm khoảng cách dòng */
+  }
+  
+  /* Responsive cho màn hình nhỏ */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px; /* Giảm khoảng cách giữa ảnh và nội dung trên mobile */
     }
-    .columnContainer {
-        flex-direction: column;
+  
+    .imageWrapper {
+      order: -1;
     }
-    .textArea, .imageArea {
-        flex: 1;
-        width: 100%;
-        text-align: center;
+  
+    .image {
+      max-width: 60%;
     }
-    .imageArea {
-        order: -1;
+  
+    .text {
+      text-align: center;
     }
-    .button {
-        margin: 0.5rem auto;
-    }
-}
+  }
+  
